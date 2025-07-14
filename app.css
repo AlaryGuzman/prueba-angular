@@ -1,0 +1,30 @@
+.component-section {
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: #5a5a5b;
+}
+
+.component-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3f51b5;
+  border-bottom: 2px solid #3f51b5;
+  padding-bottom: 0.5rem;
+}
+
+.component-box {
+  background-color: white;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.component-box h3 {
+  margin-top: 0;
+  color: #333;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}

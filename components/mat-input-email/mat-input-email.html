@@ -1,0 +1,44 @@
+<div class="container" (click)="activate()">
+  <div class="top"></div>
+  <div class="bottom"></div>
+
+  <div class="center" [class.active]="active">
+    <h2>Please Sign In</h2>
+
+    <div *ngIf="successMessage" class="message success">{{ successMessage }}</div>
+
+   
+    <div *ngIf="errorMessage" class="message error">{{ errorMessage }}</div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        required
+      />
+      <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="error">
+        <small *ngIf="loginForm.get('email')?.hasError('required')">Campo obligatorio</small>
+        <small *ngIf="loginForm.get('email')?.hasError('email')">Correo inválido</small>
+      </div>
+
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        required
+      />
+      <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="error">
+        <small *ngIf="loginForm.get('password')?.hasError('required')">Campo obligatorio</small>
+        <small *ngIf="loginForm.get('password')?.hasError('minlength')">Mínimo 8 caracteres</small>
+        <small *ngIf="loginForm.get('password')?.hasError('pattern')">Debe contener mayúscula, minúscula, número y símbolo</small>
+      </div>
+
+      <button mat-raised-button color="primary" class="login-button" type="submit">
+        Iniciar sesión
+      </button>
+    </form>
+  </div>
+</div>
+
